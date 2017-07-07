@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Copyright (c) 1998, 1999 Nik Clayton, All rights reserved.
+
+     Redistribution and use in source (SGML DocBook) and 'compiled' forms
+     (SGML HTML, PDF, PostScript, RTF and so forth) with or without
+     modification, are permitted provided that the following conditions
+     are met:
+
+      1. Redistributions of source code (SGML DocBook) must retain the above
+         copyright notice, this list of conditions and the following
+         disclaimer as the first lines of this file unmodified.
+
+      2. Redistributions in compiled form (transformed to other DTDs,
+         converted to PDF, PostScript, RTF and other formats) must reproduce
+         the above copyright notice, this list of conditions and the
+         following disclaimer in the documentation and/or other materials
+         provided with the distribution.
+
+     THIS DOCUMENTATION IS PROVIDED BY NIK CLAYTON "AS IS" AND ANY EXPRESS OR
+     IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
+     OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+     DISCLAIMED. IN NO EVENT SHALL NIK CLAYTON BE LIABLE FOR ANY DIRECT,
+     INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+     (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+     SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+     HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+     STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+     ANY WAY OUT OF THE USE OF THIS DOCUMENTATION, EVEN IF ADVISED OF THE
+     POSSIBILITY OF SUCH DAMAGE.
+
+-->
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="getstartedguide">
+  <title>Getting Started Guide</title>
+
+  <para>The &os; Documentation Project (<acronym>FDP</acronym>)
+    maintains the &os; documentation set, including manual pages, the
+    Handbook and <acronym>FAQ</acronym>, articles, and web
+    pages.</para>
+
+  <para>This Guide teaches the tools and methods of contributing to
+    the <acronym>FDP</acronym>.  It also guides new translators
+    through the translation creation process for existing &os;
+    documentation.  The goal for this Guide is to provide new
+    documentation contributors with the knowledge and tools to submit
+    patches and translations to the &os; Documentation Project.  By
+    the end of this guide, the reader will understand the
+    documentation workflow and have all the tools to continue their
+    contributions.</para>
+
+  <para>Here are the topics covered in this Guide:</para>
+
+  <itemizedlist>
+    <listitem>
+      <para>How to install and use the documentation tools.</para>
+    </listitem>
+
+    <listitem>
+      <para>The &os; documentation layout and workflow.</para>
+    </listitem>
+
+    <listitem>
+      <para>Edit existing and contribute new documentation.</para>
+    </listitem>
+
+    <listitem>
+      <para>Submit a patch.</para>
+    </listitem>
+
+    <listitem>
+      <para>Using the <acronym>PO</acronym>/gettext translation
+	system.</para>
+    </listitem>
+
+    <listitem>
+      <para>Working with other members of the documentation
+	team.</para>
+    </listitem>
+  </itemizedlist>
+
+  <para>By following this Guide, the reader will create at least
+    one patch and know where to go for further assistance.</para>
+
+  <para>Readers are recommended to have a &os; system with a graphical
+    environment and networking enabled with an Internet connection to
+    work alongside this Guide.</para>
+
+  <sect1 xml:id="getstartedguide-conventions-trademarks">
+    <title>Document Conventions and Trademarks</title>
+
+    <para>Whenever a <keycap>%</keycap> is used as the prompt, it
+      means this is a normal user executing the command that follows.
+      A <keycap>#</keycap> prompt indicates the command needs to run
+      with suberuser (<emphasis>root</emphasis) privileges.</para>
+
+    <para>The &os; Documentation Project is referred to as the
+      <acronym>FDP</acronym>.</para>
+
+    <para>&os; is a registered trademark of the The &os; Foundation.
+      &os; documentation is provided under the
+      <link xlink:href="&url.base;/copyright/freebsd-doc-license.html">&os;
+	Documentation License</link>.</para>
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-introduction">
+    <title>Introduction to the &os; Documentation Project</title>
+
+    <para>The &os; Documentation Project (<acronym>FDP</acronym>)
+      maintains the documentation for the &os; project.  Its purpose
+      is to provide &os; users with instructions for configuring and
+      using the features provided by the &os; operating system.  It is
+      intended for new users who have little to no experience with a
+      Unix-like system and users who want to learn more about the &os;
+      operating system.</para>
+
+    <para>The &os; documentation set includes a number of documents of
+      different types.  Some of the most important ones are described
+      here:</para>
+
+    <itemizedlist>
+      <listitem>
+	<para><emphasis>The &os; Handbook:</emphasis> A resource for
+	  users to learn about the features this operating system
+	  provides.  Its main focus is towards users administrators of
+	  &os; systems.</para>
+      </listitem>
+
+      <listitem>
+	<para><emphasis><acronym>FAQ</acronym>:</emphasis> A
+	  collection of frequently asked questions and their answers.
+	  This resource provides users with a written source of
+	  consistently maintained answers.</para>
+      </listitem>
+
+      <listitem>
+	<para><emphasis>Manual pages:</emphasis> There are the manual
+	  pages provided with the operating system using the
+	  <citerefentry><refentrytitle>man</refentrytitle>
+	    <manvolnum>1</manvolnum>
+	  </citerefentry> format.  In &os;, manual pages are managed
+	  outside the <emphasis>doc</emphasis> repository, as they
+	  reside within the <emphasis>src</emphasis> repository.
+
+      </listitem>
+
+      <listitem>
+	<para><emphasis>Articles:</emphasis> The &os; Project
+	  maintains a collection of smaller articles.  These describe
+	  certain things that do not fit into other documentation
+	  categories, but are worth keeping around, sometimes for
+	  historical reasons.</para>
+      </listitem>
+
+      <listitem>
+      </listitem>
+
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-tools">
+    <title>Get the Tools</title>
+
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-source">
+    <title>Get the Source</title>
+
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-accounts">
+    <title>Create Accounts</title>
+
+    <sect2 xml:id="getstartedguide-bug-tracker">
+      <title>Bug Tracker</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-review-website">
+      <title>Review Website</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-fdp-mailing-list">
+      <title><acronym>FDP</acronym> Mailing List</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-translations-mailing-list">
+      <title>Translations Mailing List</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-irc-channel">
+      <title><acronym>IRC</acronym> Channel</title>
+
+    </sect2>
+
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-review-bugs">
+    <title>Review Existing Bugs</title>
+
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-make-test-edits">
+    <title>Make and Test Edits</title>
+
+    <sect2 xml:id="getstartedguide-find-file">
+      <title>Find the File to Edit</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-configure-editor">
+      <title>Configure Editor</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-make-edits">
+      <title>Making Edits</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-run-igor">
+      <title>Run <program>igor</program></title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-build-test">
+      <title>Build Test</title>
+
+    </sect2>
+
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-create-submit-patch">
+    <title>Create and Submit a Patch</title>
+
+    <sect2 xml:id="getstartedguide-submit-patch">
+      <title>Submit the Patch</title>
+
+    </sect2>
+
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-use-review-system">
+    <title>Using the Review System</title>
+
+    <sect2 xml:id="getstartedguide-client-setup">
+      <title>Client Setup</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-create-cli-revision">
+      <title>Create a Revision using the Command Line Client</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-create-web-revision">
+      <title>Create a Revision using the Web Interface</title>
+
+    </sect2>
+
+  </sect1>
+
+  <sect1 xml:id="getstartedguide-use-translation-system">
+    <title>Using the Translation System</title>
+
+    <sect2 xml:id="getstartedguide-initial-workspace-setup">
+      <title>Initial Workspace Setup</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-extracting-strings">
+      <title>Extracting strings</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-using-po-editor">
+      <title>Using a PO Editor</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-generate-translated-document">
+      <title>Generating the Translated Document</title>
+
+    </sect2>
+
+    <sect2 xml:id="getstartedguide-create-patch-submission">
+      <title>Creating a Patch for Submission</title>
+
+    </sect2>
+  </sect1>
+</chapter>
