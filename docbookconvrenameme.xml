@@ -151,13 +151,62 @@
       </listitem>
 
       <listitem>
+	<para><emphasis>Books:</emphasis></para> This category
+	  includes the Porter's Handbook, with instructions on how to
+	  work with the ports system as a developer or
+	  <emphasis>ports</emphasis> committer.  It also has the &os;
+	  Developer's Handbook, intended for people who want to know
+	  more about how &os; is developed and how some of its
+	  subsystems work.</para>
       </listitem>
 
+      <listitem>
+	<para><emphasis>The &os; Website:</emphasis> The &os; Website
+	  is maintained by the Documentation Project and can be built
+	  like any other document using a
+	  <filename>Makefile</filename>.<para>
+      </listitem
+    </itemizedlist>
+
+    <para>The <acronym>FDP</acronym> also maintains the
+      <link
+	xlink:href="&url.base;/doc/en_us.ISO8859-1/books/fdp-primer/">FDP Primer</link>,
+      which contains instructions for people who want to get involved
+      in the &os; documentation project.  Starting from the tools
+      being used, to formatting and indentation rules, it covers
+      everything a person involved in &os; documentation needs to
+      know.  It is used as a reference even by documentation
+      committers who have been around for a long time.</para>
+
+    <para>Translation projects for various countries and languages
+      exist to translate &os; documentation into their respective
+      languages.  Translated documentation helps users who do not
+      speak English and who find it easier to understand the system
+      when the instructions are written in their native
+      language.</para>
   </sect1>
 
   <sect1 xml:id="getstartedguide-tools">
     <title>Get the Tools</title>
 
+    <para>The <acronym>FDP</acronym> maintains the
+      <filename>textproc/docproj</filename> meta-port. This provides
+      the software needed to edit and build the &os; documentation.
+      To save compilation time, we will install this software using
+      the package.  As the default package does not include
+      Japanese (<acronym>CJK</acronym>) support, translation tools, or
+      a translation file editor, we will also install those
+      packages.</para>
+
+    <note>
+      <para>Although manual editing of a <filetype>.po</filetype>
+	(translation) file is possible, using a PO editor provides
+	more comfort and error checking. We will use
+	<application>PO edit</application> in this workshop, which is
+	available from
+	<link xlink:href="https://poedit.net"></link>.</para>
+
+CONTINUE HERE --------------------------------
   </sect1>
 
   <sect1 xml:id="getstartedguide-source">
