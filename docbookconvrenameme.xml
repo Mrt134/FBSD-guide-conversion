@@ -349,8 +349,8 @@ At revision 48138.</screen>
 	<literal>Log In</literal> link at the top of the page and
 	enter your email address and password.  If you do not want
 	your browser to cache the password, uncheck the
-	<literal>Remember</literal> checkbox. Click the
-	<literal>Log in</literal> buytton. You should now see a page
+	<literal>Remember</literal> checkbox.  Click the
+	<literal>Log in</literal> buytton.  You should now see a page
 	similar to the one shown in this image:</para>
 
       <figure xml:id="bsdbugtracker-main-page-after-login">
@@ -372,6 +372,32 @@ At revision 48138.</screen>
 
     <sect2 xml:id="getstartedguide-review-website">
       <title>Review Website</title>
+
+      <para>Next, go to <link
+	  xlink:href="https://reviews.freebsd.org/auth/register/">.
+	In the screen shown in the next figure, input a username into
+	the <literal>Real Name</literal> field, enter and confirm a
+	password, and input an email address.  This often is the same
+	address used for the bug tracker, but does not have to be.
+	Make sure to use a valid email address that is checked often.
+	All reviewer comments regarding a patch are sent to that email
+	address.  Finally, type the text that appears in the
+	<literal>CAPTCHA</literal> field and click the
+	<literal>Register Phabricator Account</literal> button.  The
+	web page displays a message indicating you need to check your
+	inbox for an activation email and to use the instructions in
+	the email to activate your account.</para>
+
+      <figure xml:id="bsdreviewsite-create-account">
+	<title>Create an Account on the &os; Review Website</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsdreviewsite-create-account"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
 
     </sect2>
 
