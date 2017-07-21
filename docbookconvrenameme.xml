@@ -447,6 +447,20 @@ At revision 48138.</screen>
     <sect2 xml:id="getstartedguide-translations-mailing-list">
       <title>Translations Mailing List</title>
 
+      <para>If you are interested in translating existing &os;
+	documentation into your native language, you should also
+	subscribe to the translations mailing list.  To do so, go to
+	<link
+	  xlink:href="http://lists.freebsd.org/mailman/listinfo/freebsd-translators></link>.
+	This page is laid out the same as the <acronym>FDP</acronym>
+	mailing list page so that you can subscribe to the list and
+	view its archives.  Again, do not forget to reply to the
+	confirmation email.  If you join this mailing list, you should
+	send an introduction email indicating which languages you are
+	interested in translating so other translators of the language
+	know another person is available to assist with the
+	translation.</para>
+
     </sect2>
 
     <sect2 xml:id="getstartedguide-irc-channel">
