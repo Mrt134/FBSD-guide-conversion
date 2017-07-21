@@ -374,7 +374,7 @@ At revision 48138.</screen>
       <title>Review Website</title>
 
       <para>Next, go to <link
-	  xlink:href="https://reviews.freebsd.org/auth/register/">.
+	  xlink:href="https://reviews.freebsd.org/auth/register/"></link>.
 	In the screen shown in the next figure, input a username into
 	the <literal>Real Name</literal> field, enter and confirm a
 	password, and input an email address.  This often is the same
@@ -403,6 +403,44 @@ At revision 48138.</screen>
 
     <sect2 xml:id="getstartedguide-fdp-mailing-list">
       <title><acronym>FDP</acronym> Mailing List</title>
+
+      <para>To subscribe to the &a.doc;, go to <link
+	  xlink:href="http://lists.freebsd.org/mailman/listinfo/freebsd-doc></link>.
+	In the screen shown in the next image, input a valid email
+	address into the <literal>Your email address</literal> field.
+	If you wish, you can also enter your name and pick and confirm
+	a password, or leave those fields empty. By default, you will
+	receive an email for every message that is sent to this list.
+	This is a low-traffic list which averages a few messages a
+	day.  If you prefer to only receive one email a day containing
+	all of the messages from the day, click the
+	<literal>Yes</literal> button next to
+	<literal>Would you like to receive list mail batched in a
+	  daily digest?</literal>.  When finished, click the
+	<literal>Subscribe</literal> button.  Again, you will receive
+	a confirmation email with a link to click in order to finish
+	subscribing to this list.</para>
+
+      <figure xml:id="bsdmaillist-subscribe">
+	<title>Subscribe to the <acronym>FDP</acronym> Mailing
+	  List</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsdmaillist-subscribe"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+      <para>If you wish, you can send an introductory email to this
+	list to tell the other members of the list a little bit about
+	yourself and your interest in &os; documentation.</para>
+      <para>If you would like to review the archived messages for this
+	mailing list, go to <link
+	  xlink:href="http://lists.freebsd.org/pipermail/freebsd-doc/></link>.
+	The archives are listed by month, with this month's messages
+	at the top of the list.</para>
 
     </sect2>
 
