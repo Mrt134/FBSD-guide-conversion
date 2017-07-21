@@ -314,19 +314,59 @@ At revision 48138.</screen>
     <sect2 xml:id="getstartedguide-bug-tracker">
       <title>Bug Tracker</title>
 
-    <para>To create an account on the bug tracker, go to <link
+      <para>To create an account on the bug tracker, go to <link
 	xlink:href="https://bugs.&url.base;/bugzilla/createaccount.cgi>.
-      In the screen shown in Figure 1, input a valid email address and
-      click the <literal>Send</literal> button.  Use an email address
-      that you check often as any comments and updates regarding your
-      patch will be sent to that email address</para>
+	In the screen shown in Figure 1, input a valid email address
+	and click the <literal>Send</literal> button.  Use an email
+	address that you check often as any comments and updates
+	regarding your patch are sent to that email address.</para>
 
-    <para>Once you input your email address, the web page will display
-      a message indicating that you need to check your inbox for an
-      activation email and to click on the link within that email to
-      activate the account within three days.  When you click the link
-      in the activation email, you will be prompted to set your
-      password.
+      <para>Once you input your email address, the web page displays a
+	message indicating you need to check your inbox for an
+	activation email and to click on the link within the email to
+	activate the account within three days.  When you click the
+	link in the activation email, you will be prompted to set your
+	password.
+
+      <note>
+	<para>Email addresses may be made publically available. The
+	  user may wish to create a new email account only for &os;
+	  contributions.</para>
+      </note>
+
+      <figure xml:id="bsdbugtracker-create-account">
+	<title>Create an Account on the &os; Bug Tracker</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsdbugtracker-create-account"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+      <para>Once the account is activated, click the
+	<literal>Log In</literal> link at the top of the page and
+	enter your email address and password.  If you do not want
+	your browser to cache the password, uncheck the
+	<literal>Remember</literal> checkbox. Click the
+	<literal>Log in</literal> buytton. You should now see a page
+	similar to the one shown in this image:</para>
+
+      <figure xml:id="bsdbugtracker-main-page-after-login">
+	<title>Main Page of &os; Bug Tracker While Logged In</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsdbugtracker-main-page-after-login"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+      <para>Take a few minutes to click the
+	<literal>Preferences</literal> link and to review the
+	available preferences.</para>
 
     </sect2>
 
