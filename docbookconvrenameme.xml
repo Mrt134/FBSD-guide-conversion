@@ -466,6 +466,24 @@ At revision 48138.</screen>
     <sect2 xml:id="getstartedguide-irc-channel">
       <title><acronym>IRC</acronym> Channel</title>
 
+      <para>The <acronym>FDP</acronym> has its own
+	<literal>#bsddocs</literal> channel on
+	<literal>EFNET</literal>.  The <acronym>IRC</acronym> channel
+	provides an opportunity to have near real-time conversations
+	with other members of the documentation team.  This is useful
+	if you want to discuss the best way to word a documentation
+	improvement or have someone review a small patch before
+	submitting it.  If you hang out on this channel frequently,
+	you will also get a good idea of who is working on which bits
+	of documentation.</para>
+
+      <para>In order to join this <acronym>IRC</acronym> channel, you
+	will need an <acronym>IRC</acronym> client.  Once you have an
+	<acronym>IRC</acronym> client, input an
+	<literal>EFNET</literal> server from the list at <link
+	  xlink:href="http://www.efnet.org/?module=servers></link> and
+	join the <literal>#bsddocs</literal> channel.</para>
+
     </sect2>
 
   </sect1>
