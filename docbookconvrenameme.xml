@@ -405,7 +405,7 @@ At revision 48138.</screen>
       <title><acronym>FDP</acronym> Mailing List</title>
 
       <para>To subscribe to the &a.doc;, go to <link
-	  xlink:href="http://lists.freebsd.org/mailman/listinfo/freebsd-doc></link>.
+	  xlink:href="http://lists.freebsd.org/mailman/listinfo/freebsd-doc"></link>.
 	In the screen shown in the next image, input a valid email
 	address into the <literal>Your email address</literal> field.
 	If you wish, you can also enter your name and pick and confirm
@@ -438,7 +438,7 @@ At revision 48138.</screen>
 	yourself and your interest in &os; documentation.</para>
       <para>If you would like to review the archived messages for this
 	mailing list, go to <link
-	  xlink:href="http://lists.freebsd.org/pipermail/freebsd-doc/></link>.
+	  xlink:href="http://lists.freebsd.org/pipermail/freebsd-doc/"></link>.
 	The archives are listed by month, with this month's messages
 	at the top of the list.</para>
 
@@ -451,7 +451,7 @@ At revision 48138.</screen>
 	documentation into your native language, you should also
 	subscribe to the translations mailing list.  To do so, go to
 	<link
-	  xlink:href="http://lists.freebsd.org/mailman/listinfo/freebsd-translators></link>.
+	  xlink:href="http://lists.freebsd.org/mailman/listinfo/freebsd-translators"></link>.
 	This page is laid out the same as the <acronym>FDP</acronym>
 	mailing list page so that you can subscribe to the list and
 	view its archives.  Again, do not forget to reply to the
@@ -481,8 +481,8 @@ At revision 48138.</screen>
 	will need an <acronym>IRC</acronym> client.  Once you have an
 	<acronym>IRC</acronym> client, input an
 	<literal>EFNET</literal> server from the list at <link
-	  xlink:href="http://www.efnet.org/?module=servers></link> and
-	join the <literal>#bsddocs</literal> channel.</para>
+	  xlink:href="http://www.efnet.org/?module=servers"></link>
+	and join the <literal>#bsddocs</literal> channel.</para>
 
     </sect2>
 
@@ -490,6 +490,19 @@ At revision 48138.</screen>
 
   <sect1 xml:id="getstartedguide-review-bugs">
     <title>Review Existing Bugs</title>
+
+    <para>You now have everything you need to start contributing to
+      the <acronym>FDP</acronym>.  Given the amount of existing
+      documentation, it can be overwhelming when deciding where to
+      start.  Using the &os; Bug Tracker is always recommended as
+      a starting point.</para>
+
+    <para>To see which documentation bugs are available, go to <link
+	xlink:href="https://bugs.freebsd.org"></link>.  Make sure you
+      are logged in (so you can interact with an existing bug) and
+      click <literal>Search</literal>(4th option from the top-left).
+      Select <literal>Documentation</literal> in the
+      <literal>Product</literal></para>
 
   </sect1>
 
