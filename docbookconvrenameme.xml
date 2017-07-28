@@ -314,39 +314,175 @@ At revision 48138.</screen>
     <sect2 xml:id="getstartedguide-bug-tracker">
       <title>Bug Tracker</title>
 
-    <para>To create an account on the bug tracker, go to <link
+      <para>To create an account on the bug tracker, go to <link
 	xlink:href="https://bugs.&url.base;/bugzilla/createaccount.cgi>.
-      In the screen shown in Figure 1, input a valid email address and
-      click the <literal>Send</literal> button.  Use an email address
-      that you check often as any comments and updates regarding your
-      patch will be sent to that email address</para>
+	In the screen shown in Figure 1, input a valid email address
+	and click the <literal>Send</literal> button.  Use an email
+	address that you check often as any comments and updates
+	regarding your patch are sent to that email address.</para>
 
-    <para>Once you input your email address, the web page will display
-      a message indicating that you need to check your inbox for an
-      activation email and to click on the link within that email to
-      activate the account within three days.  When you click the link
-      in the activation email, you will be prompted to set your
-      password.
+      <para>Once you input your email address, the web page displays a
+	message indicating you need to check your inbox for an
+	activation email and to click on the link within the email to
+	activate the account within three days.  When you click the
+	link in the activation email, you will be prompted to set your
+	password.
+
+      <note>
+	<para>Email addresses may be made publically available. The
+	  user may wish to create a new email account only for &os;
+	  contributions.</para>
+      </note>
+
+      <figure xml:id="bsdbugtracker-create-account">
+	<title>Create an Account on the &os; Bug Tracker</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsdbugtracker-create-account"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+      <para>Once the account is activated, click the
+	<literal>Log In</literal> link at the top of the page and
+	enter your email address and password.  If you do not want
+	your browser to cache the password, uncheck the
+	<literal>Remember</literal> checkbox.  Click the
+	<literal>Log in</literal> buytton.  You should now see a page
+	similar to the one shown in this image:</para>
+
+      <figure xml:id="bsdbugtracker-main-page-after-login">
+	<title>Main Page of &os; Bug Tracker While Logged In</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsdbugtracker-main-page-after-login"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+      <para>Take a few minutes to click the
+	<literal>Preferences</literal> link and to review the
+	available preferences.</para>
 
     </sect2>
 
     <sect2 xml:id="getstartedguide-review-website">
       <title>Review Website</title>
 
+      <para>Next, go to <link
+	  xlink:href="https://reviews.freebsd.org/auth/register/"></link>.
+	In the screen shown in the next figure, input a username into
+	the <literal>Real Name</literal> field, enter and confirm a
+	password, and input an email address.  This often is the same
+	address used for the bug tracker, but does not have to be.
+	Make sure to use a valid email address that is checked often.
+	All reviewer comments regarding a patch are sent to that email
+	address.  Finally, type the text that appears in the
+	<literal>CAPTCHA</literal> field and click the
+	<literal>Register Phabricator Account</literal> button.  The
+	web page displays a message indicating you need to check your
+	inbox for an activation email and to use the instructions in
+	the email to activate your account.</para>
+
+      <figure xml:id="bsdreviewsite-create-account">
+	<title>Create an Account on the &os; Review Website</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsdreviewsite-create-account"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
     </sect2>
 
     <sect2 xml:id="getstartedguide-fdp-mailing-list">
       <title><acronym>FDP</acronym> Mailing List</title>
+
+      <para>To subscribe to the &a.doc;, go to <link
+	  xlink:href="http://lists.freebsd.org/mailman/listinfo/freebsd-doc></link>.
+	In the screen shown in the next image, input a valid email
+	address into the <literal>Your email address</literal> field.
+	If you wish, you can also enter your name and pick and confirm
+	a password, or leave those fields empty. By default, you will
+	receive an email for every message that is sent to this list.
+	This is a low-traffic list which averages a few messages a
+	day.  If you prefer to only receive one email a day containing
+	all of the messages from the day, click the
+	<literal>Yes</literal> button next to
+	<literal>Would you like to receive list mail batched in a
+	  daily digest?</literal>.  When finished, click the
+	<literal>Subscribe</literal> button.  Again, you will receive
+	a confirmation email with a link to click in order to finish
+	subscribing to this list.</para>
+
+      <figure xml:id="bsdmaillist-subscribe">
+	<title>Subscribe to the <acronym>FDP</acronym> Mailing
+	  List</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsdmaillist-subscribe"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+      <para>If you wish, you can send an introductory email to this
+	list to tell the other members of the list a little bit about
+	yourself and your interest in &os; documentation.</para>
+      <para>If you would like to review the archived messages for this
+	mailing list, go to <link
+	  xlink:href="http://lists.freebsd.org/pipermail/freebsd-doc/></link>.
+	The archives are listed by month, with this month's messages
+	at the top of the list.</para>
 
     </sect2>
 
     <sect2 xml:id="getstartedguide-translations-mailing-list">
       <title>Translations Mailing List</title>
 
+      <para>If you are interested in translating existing &os;
+	documentation into your native language, you should also
+	subscribe to the translations mailing list.  To do so, go to
+	<link
+	  xlink:href="http://lists.freebsd.org/mailman/listinfo/freebsd-translators></link>.
+	This page is laid out the same as the <acronym>FDP</acronym>
+	mailing list page so that you can subscribe to the list and
+	view its archives.  Again, do not forget to reply to the
+	confirmation email.  If you join this mailing list, you should
+	send an introduction email indicating which languages you are
+	interested in translating so other translators of the language
+	know another person is available to assist with the
+	translation.</para>
+
     </sect2>
 
     <sect2 xml:id="getstartedguide-irc-channel">
       <title><acronym>IRC</acronym> Channel</title>
+
+      <para>The <acronym>FDP</acronym> has its own
+	<literal>#bsddocs</literal> channel on
+	<literal>EFNET</literal>.  The <acronym>IRC</acronym> channel
+	provides an opportunity to have near real-time conversations
+	with other members of the documentation team.  This is useful
+	if you want to discuss the best way to word a documentation
+	improvement or have someone review a small patch before
+	submitting it.  If you hang out on this channel frequently,
+	you will also get a good idea of who is working on which bits
+	of documentation.</para>
+
+      <para>In order to join this <acronym>IRC</acronym> channel, you
+	will need an <acronym>IRC</acronym> client.  Once you have an
+	<acronym>IRC</acronym> client, input an
+	<literal>EFNET</literal> server from the list at <link
+	  xlink:href="http://www.efnet.org/?module=servers></link> and
+	join the <literal>#bsddocs</literal> channel.</para>
 
     </sect2>
 
