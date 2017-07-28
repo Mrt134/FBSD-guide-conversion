@@ -595,20 +595,20 @@ At revision 48138.</screen>
   <sect2 xml:id="getstartedguide-coming-attractions">
     <title>Coming Attractions </title>
       
-    <para>The &os; Project is committed to maintaining high quality
-      documentation and translations.  The tools and processes are 
-      constantly evolving to make it easier for those who wish to
-      help with the documentation project.</para>
+    <para>The &os; Project is committed to 
+      maintaining high quality documentation and translations.  
+      The tools and processes are constantly evolving to make it 
+      easier for those who wish to help with the documentation 
+      project.</para>
       
     <para>This section describes some of the tools that are 
       currently under consideration and testing for possible 
-      integration into the documentation or translation workflow. 
+      integration into the documentation or translation workflow.   
       During BSDCan, drop by the Doc Lounge room in the evenings 
-      for further discussion and demonstrations of these tools.  
+      for further discussion and demonstrations of these tools.    
       After BSDCan, discussion and status reports on these and 
-      other tools will be available on the &a.doc 
-      Freebsd-doc mailing list or the 
-      EFnet #bsddocs IRC channel.</para>
+      other tools will be available on the &a.doc or the 
+      EFnet #bsddocs <acronym>IRC</acronym> channel.</para>
   
     <orderedlist>
       <listitem>   
@@ -626,7 +626,7 @@ At revision 48138.</screen>
       <listitem>
         <para><link xlink:href="http://pootle.translatehouse.org"> 
           Pootle</link> and <link xlink:href="https://weblate.org/en"
-          >Weblate </link> are open source web-based PO translation
+          >Weblate</link> are open source web-based PO translation
           systems that allow translators to use their web browser as
           a PO editor.  These systems share translation memory 
           between translators and can be configured to automatically
@@ -635,11 +635,19 @@ At revision 48138.</screen>
       </listitem>
 
     <listitem>
-    <para>&os; uses the Subversion version control system.  However, we have started to work on a Github to Subversion bridge.  When complete, users will be able to submit git pull requests for documentation and translation updates.</para>
+    <para>&os; uses the Subversion version control system.  
+      However, we have started to work on a Github to Subversion 
+      bridge.  When complete, users will be able to submit git pull 
+      requests for documentation and translation updates.</para>
     </listitem>
 
     <listitem>
-    <para>&os; is currently reviewing its formats for publishing the documentation.  Currently, the documentation is available in HTML and compressed HTML, PDF and compressed PDF, compressed Postscript, and compressed text.  The ePUB format is currently a work in progress.  Some formats may be retired and other formats may be considered.</para>
+    <para>&os; is currently reviewing its formats for publishing the 
+      documentation.  Currently, the documentation is available in 
+      HTML and compressed HTML, PDF and compressed PDF, compressed
+      Postscript, and compressed text.  The ePUB format is currently
+      a work in progress.  Some formats may be retired and other
+      formats may be considered.</para>
     </listitem>
   </orderedlist>
 
