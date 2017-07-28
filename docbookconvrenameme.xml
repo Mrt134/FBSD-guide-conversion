@@ -170,7 +170,7 @@
 
     <para>The <acronym>FDP</acronym> also maintains the
       <link
-	xlink:href="&url.base;/doc/en_us.ISO8859-1/books/fdp-primer/">FDP Primer</link>,
+        xlink:href="&url.base;/doc/en_us.ISO8859-1/books/fdp-primer/">FDP Primer</link>,
       which contains instructions for people who want to get involved
       in the &os; documentation project.  Starting from the tools
       being used, to formatting and indentation rules, it covers
@@ -431,7 +431,7 @@ At revision 48138.</screen>
     </sect2>
 
     <sect2 xml:id="getstartedguide-using-po-editor">
-      <title>Using a PO Editor</title>
+     <title>Using a PO Editor</title>
 
     </sect2>
 
@@ -442,6 +442,57 @@ At revision 48138.</screen>
 
     <sect2 xml:id="getstartedguide-create-patch-submission">
       <title>Creating a Patch for Submission</title>
+
+  <sect2 xml:id="getstartedguide-coming-attractions">
+    <title>Coming Attractions </title>
+      
+    <para>The &os; Project is committed to maintaining high quality
+      documentation and translations.  The tools and processes are 
+      constantly evolving to make it easier for those who wish to
+      help with the documentation project.</para>
+      
+    <para>This section describes some of the tools that are 
+      currently under consideration and testing for possible 
+      integration into the documentation or translation workflow. 
+      During BSDCan, drop by the Doc Lounge room in the evenings 
+      for further discussion and demonstrations of these tools.  
+      After BSDCan, discussion and status reports on these and 
+      other tools will be available on the &a.doc 
+      Freebsd-doc mailing list or the 
+      EFnet #bsddocs IRC channel.</para>
+  
+    <orderedlist>
+      <listitem>   
+        <para>Annotator <link xlink:href="http://annotatorjs.org/">
+          </link> allows the addition of inline comments to an
+          existing web page, using a web browser.  
+          This makes it easy for people to 
+          review a document and make suggestions for 
+          corrections or improvements.  This year, the 
+          <acronym>FDP</acronym> aims to announce a schedule of 
+          time-limited reviews of individual
+          sections of the &os; Handbook.</para>
+      </listitem>
+
+      <listitem>
+        <para><link xlink:href="http://pootle.translatehouse.org"> 
+          Pootle</link> and <link xlink:href="https://weblate.org/en"
+          >Weblate </link> are open source web-based PO translation
+          systems that allow translators to use their web browser as
+          a PO editor.  These systems share translation memory 
+          between translators and can be configured to automatically
+          commit translated strings for easy updates of translated
+          documents.</para>
+      </listitem>
+
+    <listitem>
+    <para>&os; uses the Subversion version control system.  However, we have started to work on a Github to Subversion bridge.  When complete, users will be able to submit git pull requests for documentation and translation updates.</para>
+    </listitem>
+
+    <listitem>
+    <para>&os; is currently reviewing its formats for publishing the documentation.  Currently, the documentation is available in HTML and compressed HTML, PDF and compressed PDF, compressed Postscript, and compressed text.  The ePUB format is currently a work in progress.  Some formats may be retired and other formats may be considered.</para>
+    </listitem>
+  </orderedlist>
 
     </sect2>
   </sect1>
