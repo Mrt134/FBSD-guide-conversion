@@ -170,7 +170,7 @@
 
     <para>The <acronym>FDP</acronym> also maintains the
       <link
-        xlink:href="&url.base;/doc/en_us.ISO8859-1/books/fdp-primer/">FDP Primer</link>,
+	xlink:href="&url.base;/doc/en_us.ISO8859-1/books/fdp-primer/">FDP Primer</link>,
       which contains instructions for people who want to get involved
       in the &os; documentation project.  Starting from the tools
       being used, to formatting and indentation rules, it covers
@@ -315,7 +315,7 @@ At revision 48138.</screen>
       <title>Bug Tracker</title>
 
       <para>To create an account on the bug tracker, go to <link
-	xlink:href="https://bugs.&url.base;/bugzilla/createaccount.cgi>.
+	  xlink:href="https://bugs.&url.base;/bugzilla/createaccount.cgi"></link>.
 	In the screen shown in Figure 1, input a valid email address
 	and click the <literal>Send</literal> button.  Use an email
 	address that you check often as any comments and updates
@@ -502,7 +502,52 @@ At revision 48138.</screen>
       are logged in (so you can interact with an existing bug) and
       click <literal>Search</literal>(4th option from the top-left).
       Select <literal>Documentation</literal> in the
-      <literal>Product</literal></para>
+      <literal>Product</literal>drop-down menu, the click the
+      <literal>Search</literal> button.  The next image shows the
+      search page.</para>
+
+      <figure xml:id="bsddocbugs-search">
+	<title>Search for Documentation Bugs</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsddocbugs-search"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+    <para>The results of the search are displayed as seen in the
+      example shown in the next image:</para>
+
+      <figure xml:id="bsddocbugs-list-docbugs">
+	<title>List of Documentation Bugs</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsddocbugs-list-docbugs"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+    <para>To sort the bug list by date (oldest first), click the
+      <literal>ID</literal> link.  If you click it again, it reverses
+      the sorting (newest first).  Also, note who is assigned to each
+      bug.  If a person's email address is listed, that person is
+      handling the bug.  Typically, this means you don't work on that
+      bug unless you have talked to that person and have agreed to
+      help them.  If it is assigned to
+      <literal>freebsd-doc@FreeBSD.org</literal>, then no one has
+      <emphasis>taken</emphasis> the bug to work on it.  To sort the
+      bug list by assignee, click the <literal>Assignee</literal>
+      link.  To see the details of a bug, click its number.  The
+      details include the initial report, any existing patches, and
+      all comments about the bug.</para>
+
+    <para>Find a bug that you can fix.  This may require reviewing an
+      existing patch to see if it is correct, or deciding upon some
+      text that addresses a documentation deficiency.</para>
 
   </sect1>
 
