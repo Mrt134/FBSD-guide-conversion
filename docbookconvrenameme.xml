@@ -554,23 +554,157 @@ At revision 48138.</screen>
   <sect1 xml:id="getstartedguide-make-test-edits">
     <title>Make and Test Edits</title>
 
+    <para>After finding a bug to fix, open the proper source file
+      to address the patch.</para>
+
     <sect2 xml:id="getstartedguide-find-file">
       <title>Find the File to Edit</title>
+
+      <para>As an example, consider a bug which requires a fix to the
+	&os; Handbook.  A listing of the local copy of the doc
+	repository shows:</para>
+
+      <screen>&prompt.user; <userinput>cd ~/freebsddoc</userinput>
+&prompt.user; <userinput>ls</userinput>
+bn_BD.UTF-8      en_US.ISO8859-1  it_IT.ISO8859-15 mn_MN.UTF-8      pt_BR.ISO8859-1  sr_YU.ISO8859-2  zh_TW.UTF-8
+da_DK.ISO8859-1  es_ES.ISO8859-1  ja_JP.eucJP      nl_NL.ISO8859-1  README	     tr_TR.ISO8859-9
+de_DE.ISO8859-1  fr_FR.ISO8859-1  ko_KR.UTF-8      no_NO.ISO8859-1  ru_RU.KOI8-R     x11.diff.txt
+el_GR.ISO8859-7  hu_HU.ISO8859-2  Makefile	   pl_PL.ISO8859-2  share	     zh_CN.UTF-8</screen>
+
+      <para>Note there is a directory for each available language.
+	Here is a listing for the English language
+	subdirectory:</para>
+
+      <screen>&prompt.user; <userinput>ls en_US.ISO8859-1/</userinput>
+articles     books	  captions   flyer      htdocs
+Makefile     Makefile.inc share      slides</screen>
+
+      <para>Here, the English documentation has been divided by
+	<emphasis>articles</emphasis>, the various
+	hand<emphasis>books</emphasis>, the website
+	(<emphasis>htdocs</emphasis>), and <filetype>XML</filetype>
+	elements used by all of the English documentation.  Here is a
+	listing of the <literal>books</literal> subdirectory:</para>
+
+      <screen>&prompt.user; <userinput>ls en_US.ISO8859-1/books/</userinput>
+arch-handbook   design-44bsd   developers-handbook    fdp-primer    Makefile	    pmake
+bibliography    dev-model      faq		      handbook      Makefile.inc    porters-handbook</screen>
+
+      <para>And a listing for the &os; Handbook's subdirectory:</para>
+      <screen>&prompt.user; <userinput>ls en_US.ISO8859-1/books/handbook/</userinput>
+advanced-networking chapters.ent	eresources	    kernelconfig	multimedia	    security
+audit		    colophon.xml	filesystems	    l10n		network-servers     serialcomms
+basics		    config		firewalls	    linuxemu		pgpkeys		    txtfiles.ent
+bibliography	    cutting-edge	geom		    mac			ports		    virtualization
+book.xml	    desktop		index.xml	    mail		ppp-and-slip	    x11
+boot		    disks		introduction	    Makefile		preface		    zfs
+bsdinstall	    dtrace		jails		    mirrors		printing</screen>
+
+      <para>Note there is a subdirectory for each chapter of the
+	Handbook and the name usually matches the name of the chapter.
+	Do a listing of each subdirectory to see that it (usually)
+	contains a file named <filename>chapter.xml</filename>.  So,
+	to edit the <emphasis>Security</emphasis> chapter of the &os;
+	Handbook, edit
+	<filename>~/freebsddoc/en_US.ISO8859-1/books/handbook/security/chapter.xml</filename>.</para>
 
     </sect2>
 
     <sect2 xml:id="getstartedguide-configure-editor">
       <title>Configure Editor</title>
 
+      <para>The <filetype>.xml</filetype> files in the doc repository
+	are <acronym>ASCII</acronym> text files marked up using
+	<literal>Docbook XML</literal>.  Use an
+	<acronym>ASCII</acronym> text editor to edit these files.
+	Before making any edits, double-check the editor is configured
+	with these settings:</para>
+
+      <itemizedlist>
+	<listitem>
+	  <para>Word wrap set to 70 characters.</para>
+	</listitem>
+
+	<listitem>
+	  <para>Tab stops set to 2.</para>
+	</listitem>
+
+	<listitem>
+	  <para>Replace each group of 8 leading spaces with a single
+	    tab.</para>
+	</listitem>
+      </itemizedlist>
+
+      <para>Configuring these settings varies by text editor.
+	Configurations for <application>vim</application>,
+	<application>emacs</application>, and
+	<application>nano</application> are listed at <link
+	  xlink:href="&url.base;/doc/en_US.ISO8859-1/books/fdp-primer/editor-config.html></link>.
+	Graphical text editors like <application>kate</application> or
+	<application>kwrite</application> can be configured using
+	their <emphasis>Settings</emphasis> menu.</para>
+
     </sect2>
 
     <sect2 xml:id="getstartedguide-make-edits">
       <title>Making Edits</title>
 
+      <para>Once the editor is configured, open the file to edit and
+	make any changes.  Depending on the edit, assistance may be
+	needed in determining which formatting tags are required.  For
+	most edits, use the formatting tags and indentation in the
+	surrounding text to determine how to format your edits.  The
+	<literal>XML Primer</literal> at <link
+	  xlink:href="&url.base;/doc/en_US.ISO8859-1/books/fdp-primer/xml-primer.html></link>
+	is available for reference.  However, there are only about a
+	dozen tags that are regularly used.</para>
+
     </sect2>
 
     <sect2 xml:id="getstartedguide-run-igor">
       <title>Run <program>igor</program></title>
+
+      <para>The <acronym>FDP</acronym> provides a utility named
+	<application>igor</application> to assist with finding
+	formatting, grammatical, and spelling errors. Once any edits
+	are saved, run <application>igor</application> and specify the
+	name of the edited file.  This example checks the
+	<filetype>XML</filetype> file of the
+	<emphasis>Security</emphasis> chapter and
+	<application>igor</application> provides some feedback about
+	the file:</para>
+
+      <screen>&prompt.user; <userinput>igor ~/freebsddoc/en_US.ISO8859-1/books/handbook/security/chapter.xml</userinput>
+chapter.xml:374:spelling:Alternatively, if [noone] else can see your terminal now, you can
+chapter.xml:1589:bad phrase:	will work, but [the A[ and PTR records must be correct
+and
+chapter.xml:2532:contraction:The authenticity of host 'example.com (10.0.0.1)' [can't] be
+established.
+chapter.xml:2573:repeated:	<screen>&prompt.root; <userinput>scp
+<replaceable>user@example.com:/[COPYRIGHT COPYRIGHT]</replaceable></userinput>
+chapter.xml:2866:use tabs instead of spaces:[        ]use the &man.service.8;
+command:</para>
+chapter.xml:2869:blank line with whitespace:[        ]
+chapter.xml:2869:use tabs instead of spaces:[        ]
+chapter.xml:3060:repeated:	<programlisting>drwx------  2 [robert
+robert]  512 Dec 27
+11:54 private
+chapter.xml:3061:repeated:drwxrwx---+ 2 [robert  robert]  512 Dec 23 10:57 directory1
+chapter.xml:3062:repeated:drwxrwx---+ 2 [robert  robert]  512 Dec 22 10:20 directory2
+chapter.xml:3063:repeated:drwxrwx---+ 2 [robert  robert]  512 Dec 27 11:57 directory3
+chapter.xml:3064:repeated:drwxr-xr-x  2 [robert  robert]  512 Nov 23 11:54
+public_html</programlisting></screen>
+
+      <para>When checking a file you edited, only concern yourself
+	with lines you edited.  For example, if you made edits to
+	lines 2860-2870, review <emphasis>only</emphasis> those lines
+	in the <application>igor</application> output.  In this
+	example, <application>igor</application> indicates that tabs
+	were not properly used in lines 2866 and 2869, and there is an
+	extra whitespace in blank line 2869.  Resolve any issues
+	introduced by your edits. Rerun
+	<application>igor</application> until satisfied that all edits
+	are formatted correctly.</para>
 
     </sect2>
 
