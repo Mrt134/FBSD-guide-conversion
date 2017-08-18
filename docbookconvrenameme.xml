@@ -750,28 +750,96 @@ public_html</programlisting></screen>
 
     <sect2 xml:id="getstartedguide-initial-workspace-setup">
       <title>Initial Workspace Setup</title>
+      
+      <para>FreeBSD has begun to use a PO/gettext translation system 
+        that allows translators to automatically extract 
+        strings from a document that needs to be translated. The 
+        strings are then loaded into a PO editor, which supports 
+        editing these strings and offers suggestions of previously 
+        translated strings for re-use.</para>
 
+      <para>For a new translation, the doc build system needs to 
+        have a working Makefile. The following example copies the 
+        English Makefile for the Leap Seconds article; replace
+        fr_FR.ISO8859-1 with the directory name of the language you
+        wish to translate to:</para> 
+
+      <screen>&prompt.user; <userinput>cp ~/doc/en_US.ISO8859-1/
+      articles/leap-seconds/Makefile \ ~/doc/fr_FR.ISO8859-1/articles
+      /leap-seconds/</userinput> </screen>
     </sect2>
 
     <sect2 xml:id="getstartedguide-extracting-strings">
       <title>Extracting strings</title>
+      
+      <para>Then, extract all the strings to be translated from the document:</para>
 
+      <screen>&prompt.user; <userinput>cd ~/doc/fr_FR.ISO8859-1/
+      articles/leap-seconds/</userinput><userinput>make po</userinput></screen>
+      <para>This creates a new file in that directory called
+        fr_FR.po that contains all the strings from the document to
+        translate.</para>
     </sect2>
 
     <sect2 xml:id="getstartedguide-using-po-editor">
-     <title>Using a PO Editor</title>
+      <title>Using a PO Editor</title>
+      <para>To start translating, open the file fr_FR.po in the 
+        poedit editor:</para>
 
+% poedit fr_FR.po
+
+As seen in Figure 9, the left side of the editor displays all the strings from the English document. The right side lists any strings for which a translation already exists.
+
+Figure 9: Translating a File Using poedit
+[Image]
+The Source text window displays the currently selected string in English. Use the Translation field below to enter the translation that matches that string.
+
+The following tips and rules should help you with the translation process:
+
+Preserve XML tags: do not translate strings that are XML tags like <para> or </para>. They are needed by the doc build system to mark up the output in a certain way.
+
+Preserve spaces: do not change the spacing at the beginning and end of the strings in your translation.  If there were spaces before or after the English string, they should also be entered in the translated version. This is especially true for everything within <programlisting> and <screen> tags. All spaces must remain as they were in the original version.
+
+Preserve verbatim tags: these tags do not need to be translated:
+<citerefentry>
+<command>
+<filename>
+<literal>
+<manvolnum>
+<orgname>
+<package>
+<programlisting>
+<prompt>
+<refentrytitle>
+<screen>
+<userinput>
+<varname>
+
+Version Control strings: things like $FreeBSD$ do not need to be translated, as they are replaced with a version number and other information upon checking the file into FreeBSD's version control system.
+
+Names of products, places, author names, and filenames like Makefile do not need to be translated. When in doubt, do not translate and discuss these within your translation group or ask a documentation committer.
+
+Create a word list: over time, you will find that you are translating the same string over and over again. In this case, it is good to create a word list that other translators can use. This is especially helpful for difficult words and will create better consistency over time as the same word can be reused in the same context, but in other sections or documents. 
     </sect2>
 
-    <sect2 xml:id="getstartedguide-generate-translated-document">
-      <title>Generating the Translated Document</title>
+  <sect2 xml:id="getstartedguide-generate-translated-document">
+    <title>Generating the Translated Document</title>
+After translating a couple of strings or even the whole document, follow these instructions to see what the translated document looks like. First, save your edited document and close poedit. Then generate the translated document:
 
+% cd ~/doc/fr_FR.ISO8859-1/articles/leap-seconds/
+% make tran
+
+You can then create an HTML document in order to view it in a web browser. This example generates the HTML then opens it in the Firefox web browser on a graphical desktop:
+
+% make && firefox article.html
+
+Repeat these steps, beginning with make po, to continue to work on the translation.
     </sect2>
-  <sect2 xml:id="getstartedguide-create-patch-submission">
+  <sect1 xml:id="getstartedguide-create-patch-submission">
     <title>Creating a Patch for Submission</title>
     
     <para>When the translation is finished, create a patch and 
-      submit it to the FreeBSD project so that it becomes part of
+      submit it to the &os; project so that it becomes part of
       the official documentation set.  Start by adding 
       <literal>#$FreeBSD$</literal> as the 
       <emphasis>first line</emphasis> of the PO document.
@@ -785,9 +853,9 @@ public_html</programlisting></screen>
       <filename>article.xml</filename> to version control as part of
       the patch:</para>
 
-      <screen>&prompt.user; <userinput>% cd ~/doc/fr_FR.ISO8859-1/
+      <screen>&prompt.user; <userinput>cd ~/doc/fr_FR.ISO8859-1/
       articles/leap-seconds/</userinput>
-      &prompt.user; <userinput>% svnlite add Makefile 
+      &prompt.user; <userinput>svnlite add Makefile 
       article.xml fr_FR.po</userinput>
       A         Makefile
       A         article.xml
@@ -808,17 +876,17 @@ public_html</programlisting></screen>
       mistaking these files as binary data, the <literal>
       fbsd:notbinary</literal>property must also be set:</para>
 
-      <screen> &prompt.user; <userinput>% svnlite propset 
+      <screen> &prompt.user; <userinput>svnlite propset 
       svn:mime-type \'text/x-gettext-translation; charset=UTF-8' 
       fr_FR.po </userinput>
       property 'svn:mime-type' set on 'fr_FR.po'
-      &prompt.user; <userinput>% svnlite propset fbsd:notbinary yes 
+      &prompt.user; <userinput>svnlite propset fbsd:notbinary yes 
       fr_FR.po</userinput>
       property 'fbsd:notbinary' set on 'fr_FR.po'
-      &prompt.user; <userinput>% svnlite propset svn:mime-type 'text/
+      &prompt.user; <userinput>svnlite propset svn:mime-type 'text/
       xml; charset=UTF-8' article.xml</userinput>
       property 'svn:mime-type' set on 'article.xml'
-      &prompt.user; <userinput>% svnlite propset fbsd:notbinary yes 
+      &prompt.user; <userinput>svnlite propset fbsd:notbinary yes 
       article.xml</userinput>
       property 'fbsd:notbinary' set on 'article.xml'</screen>
 
@@ -829,16 +897,17 @@ public_html</programlisting></screen>
     <para>Finally, the patch is created <emphasis>from the top-level 
       directory:</emphasis></para>
 
-      <screen>&prompt.user; <userinput>% cd ~/doc
-      % svnlite diff fr_FR.ISO8859-1/articles/leap-seconds \
+      <screen>&prompt.user; <userinput>cd ~/doc </userinput>
+      <userinput>svnlite diff fr_FR.ISO8859-1/articles/leap-seconds \
       > /tmp/fr_FR-leap-seconds.diff</userinput></screen>
 
     <para>The patch file in 
       <filename>/tmp/fr_FR-leap-seconds.diff</filename>contains all 
       the information to generate the translated document and can be 
       submitted using the FreeBSD bug tracker.</para>
+  </sect1>
 
-  <sect2 xml:id="getstartedguide-coming-attractions">
+  <sect1 xml:id="getstartedguide-coming-attractions">
     <title>Coming Attractions</title>
       
     <para>The &os; Project is committed to 
@@ -896,6 +965,5 @@ public_html</programlisting></screen>
     </listitem>
   </orderedlist>
 
-    </sect2>
   </sect1>
 </chapter>
