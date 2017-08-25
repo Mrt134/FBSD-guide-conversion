@@ -711,6 +711,23 @@ public_html</programlisting></screen>
     <sect2 xml:id="getstartedguide-build-test">
       <title>Build Test</title>
 
+      <para>Next, ensure any edits do not break the build of the &os;
+	documentation and that all formatting tags used render
+	properly.  If changes are made to the &os; Handbook, run this
+	command from the root directory for the handbook:</para>
+
+      <screen>&prompt.user; <userinput>cd ~/freebsddoc/en_US.ISO8859-1/books/handbook</userinput>
+&prompt.user; <userinput>make</userinput></screen>
+
+      <para>This produces a lot of build output, but should not fail
+	with an error.  If the build is successful, it creates an
+	<filetype>HTML</filetype> file for each chapter of the
+	Handbook.  For example, to test a change to the Security
+	chapter, open
+	<filename>/usr/home/YOURNAME/freebsd/en_US.ISO8859-1/books/handbook/security.html</filename>
+	in a web browser and verify all edits look properly
+	formatted.</para>
+
     </sect2>
 
   </sect1>
@@ -718,8 +735,88 @@ public_html</programlisting></screen>
   <sect1 xml:id="getstartedguide-create-submit-patch">
     <title>Create and Submit a Patch</title>
 
+    <para>Once the build is verified, it is time to create a patch for
+      submission.  To create the patch, run
+      <command>svn diff --diff-cmd=diff -x -U9999999 > [chapter].diff.txt</command>
+      from the root directory of your local doc repository and specify
+      the name of the patch to create.  When naming the patch, use the
+      format <filename>chaptername.diff.txt</filename>.  This example
+      creates a patch of the edits to the Security chapter of the
+      Handbook.
+
+    <screen>&prompt.user; <userinput>cd ~/freebsddoc</userinput
+&prompt.user; <userinput>svnlite diff > security.diff.txt</userinput>
+&prompt.user; <userinput>more security.diff.txt</userinput>
+Index: en_US.ISO8859-1/books/handbook/security/chapter.xml
+=====================================================================
+--- en_US.ISO8859-1/books/handbook/security/chapter.xml (revision 48145)
++++ en_US.ISO8859-1/books/handbook/security/chapter.xml (working copy)
+@@ -27,6 +27,8 @@
+   <sect1 xml:id="security-synopsis">
+     <title>Synopsis</title>
+
++    <para>This is where I made my changes.</para>
++
+     <para>Security, whether physical or virtual, is a topic so broad
+       that an entire industry has evolved around it.  Hundreds of
+       standard practices have been authored about how to secure</screen>
+
+    <para>Note it is important to create the patch in the root
+      directory of the local repository.  This ensures the
+      <quote>Index</quote> line in the patch contains the full path to
+      the edited file so the patch reviewer has this information.  In
+      this simple example, a new paragraph followed by an empty line
+      was added to the Synopsis section of this chapter.</para>
+
     <sect2 xml:id="getstartedguide-submit-patch">
       <title>Submit the Patch</title>
+
+      <para>Once a patch is created, open the related bug ticket.
+	Click the <quote>Add an Attachment</quote> link which opens
+	the screen shown in the next image.</para>
+
+      <figure xml:id="bsddocbugs-attach-patch">
+	<title>Attach the Patch to the Bug Report</title>
+
+	<mediaobject>
+	  <imageobject>
+	    <imagedata
+	      fileref="[CHAPTERNAME]/bsddocbugs-attach-patch"/>
+	  </imageobject>
+	</mediaobject>
+      </figure>
+
+    <para>Be sure to complete these elements:</para>
+
+    <itemizedlist>
+      <listitem>
+	<para>Click the <quote>Browse</quote> button to browse to
+	  the location of the patch.</para>
+      </listitem>
+
+      <listitem>
+	<para>Check the box next to
+	  <quote>If the attachment is a patch, check the box
+	    below</quote>.</para>
+      </listitem>
+
+      <listitem>
+	<para>Enter a comment describing the patch in the
+	  <quote>Comment</quote> box.</para>
+      </listitem>
+
+      <listitem>
+	<para>Keep the <quote>Add me to CC list</quote> box checked
+	  to receive notifications about comments added to the
+	  patch.</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>When finished, click the <quote>Submit</quote> button.  Wait
+      for a &os; committer to review the patch.  Once the review is
+      complete, the reviewer will commit the patch and close the bug
+      report.  Congratulations! You just made a change to the &os;
+      documentation!</para>
 
     </sect2>
 
