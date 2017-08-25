@@ -825,18 +825,207 @@ Index: en_US.ISO8859-1/books/handbook/security/chapter.xml
   <sect1 xml:id="getstartedguide-use-review-system">
     <title>Using the Review System</title>
 
+    <para>When starting out with code changes, it is good to let
+      someone else look at the patch before submitting it.  &os; uses
+      the <link
+	xlink:href="http://phabricator.org/>Phabricator open source
+	review system</link>.
+      This section examines how to use the &os; Phabricator to create
+      a code review.  Code reviews allow contributors to be sure that
+      someone looked over their change and approved it.  This builds
+      confidence and encourages further patch submissions.</para>
+
     <sect2 xml:id="getstartedguide-client-setup">
       <title>Client Setup</title>
+
+      <para>The &os; Phabricator review system supports a command line
+	client and a web browser interface.  The web interface was
+	used when creating an account in Phabricator in
+	<xref linkend="getstartedguide-review-website"/>.</para>
+
+      <para>The client component of Phabricator is called Arcanist
+	(<acronym>PHP</acronym>-based) and can be installed from
+	packages with
+	<command>pkg install php5-arcanist</command>.</para>
+
+      <para>The client needs some conifuration settings to know how to
+	find and access the &os; Review server.  This involves copying
+	a cookie that is provided during the setup process.  Enter
+	<command>arc install-certificate
+	  https://reviews.freebsd.org</command> and follow the
+	on-screen instructions.</para>
+
+      <para>Once the cookie setup is complete, the only thing left is
+	to configure Arcanist to use the <acronym>URL</acronym> for
+	the &os; review system by default:</para>
+
+      <screen>&user.prompt; <userinput>arc set-config default https://reviews.freebsd.org/</userinput></screen>
 
     </sect2>
 
     <sect2 xml:id="getstartedguide-create-cli-revision">
       <title>Create a Revision using the Command Line Client</title>
 
+      <para>To create a revision from the top-level directory of your
+	&os; documentation tree checkout for the given patch, execute
+	this command:</para>
+
+      <screen>&user.prompt; <userinput>arc diff --create /path/within/doc/tree</userinput></screen>
+
+      <para>A template is opened in the default editor with this
+	content:</para>
+
+      <screen><<Replace this line with your Revision Title>>
+
+Summary:
+
+Test Plan:
+
+Reviewers:
+
+Subscribers:
+
+# NEW DIFFERENTIAL REVISION
+# Describe the changes in this new revision.
+#
+# arc could not identify any existing revision in your working copy.
+# If you intended to update an existing revision, use:
+#
+#   $ arc diff --update <revision></screen>
+
+      <para>Use these instructions when filling out the template to
+	match the review you want to create:</para>
+
+      <variablelist>
+	<varlistentry>
+	  <term>Revision Title (mandatory)</term
+
+	  <listitem>
+	    <para>This should be a short title for the review,
+	      describing what this review is for.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Summary (optional)</term>
+
+	  <listitem>
+	    <para>Provide a summary of the intended changes.  This
+	      should be in commit message style, but is optional and
+	      can be refined later.  This should give reviewers more
+	      information than the title alone.</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Test Plan (optional)</term>
+
+	  <listitem>
+	    <para>Describe how you have tested the patch or how
+	      reviewers can do the same.  For documentation, it
+	      usually suffices to say that when the patch is applied,
+	      the doc build should still work without errors.  Make
+	      sure that is true!</para>
+	  </listitem>
+	</varlistentry>
+
+	<varlistentry>
+	  <term>Reviewers (optional)</term>
+
+	  <listitem>
+	    <para>This should list a couple of people to review the
+	      patch before it is committed.  If these people have
+	      Phabricator accounts, they will be notified (usually via
+	      email) of the new review.  You can also add reviewers
+	      later using the web interface if you don't yet know who
+	      should review your patch.</para>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+
+      <para>When the template is filled out, save any changes and exit
+	the editor.  The Phabricator system creates a new review on
+	the &os; server and the client prints a link for you
+	referencing it in this form:</para>
+
+      <example>
+	<para>https://reviews.freebsd.org/DXXX</para>
+      </example>
+
+      <para>The <literal>XXXX</literal> parts will be replaced with
+	the actual number of your review, similar to a ticket
+	<acronym>ID</acronym>.  The <literal>D</literal> represents
+	the documentation tree.  You can enter that
+	<acronym>URL</acronym> into a web browser to see how your
+	review looks in the web application or make changes to
+	it.</para>
+
     </sect2>
 
     <sect2 xml:id="getstartedguide-create-web-revision">
       <title>Create a Revision using the Web Interface</title>
+
+      <para>To create a review using a web browser instead of the
+	command line client, follow these steps:</para>
+
+      <procedure>
+	<step>
+	  <para>Use a web browser to go to <link
+	      xlink:href="https://reviews.freebsd.org/differential/"/>.
+	    Make sure you are logged into your account to create
+	    reviews, so that people know who this patch came
+	    from.</para>
+	</step>
+
+	<step>
+	  <para>In the upper right corner, there is a button called
+	    <literal>Create Diff</literal>.  Clisk that button to get
+	    to the screen to crete new diffs.</para>
+	</step
+
+	<step>
+	  <para>On the <literal>Create New Diff</literal> page, you
+	    can either choose to</para>
+
+	  <stepalternatives>
+	    <step>
+	      <para>paste the patch directly into the input field
+		(Raw Diff), or</para>
+	    </step>
+
+	    <step>
+	      <para>upload your patch from a file (Raw Diff from
+		File).</para>
+	    </step>
+	  </stepalternatives>
+
+	  <para>In the <literal>Repository</literal> field, click on
+	    the small lens icon on the right.  A new window opens,
+	    from which you need to select the documentation (doc)
+	    repository.  Make sure the <literal>Visible To</literal>
+	    field is set to <literal>Public</literal>, which is the
+	    default.  When finished, click on the
+	    <literal>Create Diff</literal> button.</para>
+	</step>
+
+	<step>
+	  <para>A new page will appear with a preview of your patch at
+	    bottom.  At the top, make sure the
+	    <literal>AttachTo</literal> pull-down menu has
+	    <literal>Create a new Revision...</literal> selected.
+	    Then, click on the <literal>Continue</literal>
+	    button.</para>
+	</step>
+
+	<step>
+	  <para>The next page allows you to enter detailed information
+	    about your patch, a title, test plan, and who should
+	    review it.  It has the same information as described in
+	    the template in <xref
+	      linkend="getstartedguide-create-cli-revision"/>.  Once
+	    finished, create the review by clicking the
+	    <literal>Save</literal> button.</para>
+	</step>
 
     </sect2>
 
@@ -847,41 +1036,46 @@ Index: en_US.ISO8859-1/books/handbook/security/chapter.xml
 
     <sect2 xml:id="getstartedguide-initial-workspace-setup">
       <title>Initial Workspace Setup</title>
-      
-      <para>FreeBSD has begun to use a PO/gettext translation system 
-        that allows translators to automatically extract 
-        strings from a document that needs to be translated. The 
-        strings are then loaded into a PO editor, which supports 
-        editing these strings and offers suggestions of previously 
-        translated strings for re-use.</para>
 
-      <para>For a new translation, the doc build system needs to 
-        have a working Makefile. The following example copies the 
-        English Makefile for the Leap Seconds article; replace
-        fr_FR.ISO8859-1 with the directory name of the language you
-        wish to translate to:</para> 
+      <para>FreeBSD has begun to use a PO/gettext translation system
+	that allows translators to automatically extract
+	strings from a document that needs to be translated.  The
+	strings are then loaded into a PO editor, which supports
+	editing these strings and offers suggestions of previously
+	translated strings for re-use.</para>
 
-      <screen>&prompt.user; <userinput>cp ~/doc/en_US.ISO8859-1/
-      articles/leap-seconds/Makefile \ ~/doc/fr_FR.ISO8859-1/articles
-      /leap-seconds/</userinput> </screen>
+      <para>For a new translation, the doc build system needs to
+	have a working Makefile.  The following example copies the
+	English Makefile for the Leap Seconds article; replace
+	<literal>fr_FR.ISO8859-1</literal> with the directory name of
+	the language you wish to translate to:</para>
+
+      <screen>&prompt.user; <userinput>cp ~/doc/en_US.ISO8859-1/articles/leap-seconds/Makefile \
+      ~/doc/fr_FR.ISO8859-1/articles/leap-seconds/</userinput></screen>
+
     </sect2>
 
     <sect2 xml:id="getstartedguide-extracting-strings">
       <title>Extracting strings</title>
-      
-      <para>Then, extract all the strings to be translated from the document:</para>
+
+      <para>Then, extract all the strings to be translated from the
+	document:</para>
 
       <screen>&prompt.user; <userinput>cd ~/doc/fr_FR.ISO8859-1/
       articles/leap-seconds/</userinput><userinput>make po</userinput></screen>
+
       <para>This creates a new file in that directory called
-        fr_FR.po that contains all the strings from the document to
-        translate.</para>
+	<filename>fr_FR.po</filename> that contains all the strings
+	from the document to translate.</para>
+
     </sect2>
 
     <sect2 xml:id="getstartedguide-using-po-editor">
       <title>Using a PO Editor</title>
-      <para>To start translating, open the file fr_FR.po in the 
-        poedit editor:</para>
+
+      <para>To start translating, open the
+	<filename>fr_FR.po</filename> in the
+	<application>poedit</application> editor:</para>
 
 % poedit fr_FR.po
 
