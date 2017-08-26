@@ -112,8 +112,9 @@
       Unix-like system and users who want to learn more about the &os;
       operating system.</para>
 
-    <para>The &os; documentation set includes a number of documents of
-      different types.  Some of the most important ones are described
+    <para>The &os; documentation set includes a number of documents 
+      of different types.  
+      Some of the most important ones are described
       here:</para>
 
     <itemizedlist>
@@ -226,10 +227,10 @@
 &prompt.root; <userinput>pkg install editors/poedit</userinput></screen>
 
     <para>Once all the package installations are complete, leave the
-      superuser account and type <command>rehash</rehash> to load the
-      new binaries into your path.  You are now ready to move on to
-      the next section to install the documentation source
-      code.</para>
+       superuser account and type <command>rehash</command> to load
+       the new binaries into your path.  You are now ready to 
+       move on to the next section to install the 
+       documentation source code.</para>
 
   </sect1>
 
@@ -350,7 +351,7 @@ At revision 48138.</screen>
 	enter your email address and password.  If you do not want
 	your browser to cache the password, uncheck the
 	<literal>Remember</literal> checkbox.  Click the
-	<literal>Log in</literal> buytton.  You should now see a page
+	<literal>Log in</literal> button.  You should now see a page
 	similar to the one shown in this image:</para>
 
       <figure xml:id="bsdbugtracker-main-page-after-login">
@@ -763,10 +764,11 @@ Index: en_US.ISO8859-1/books/handbook/security/chapter.xml
 
     <para>Note it is important to create the patch in the root
       directory of the local repository.  This ensures the
-      <quote>Index</quote> line in the patch contains the full path to
-      the edited file so the patch reviewer has this information.  In
-      this simple example, a new paragraph followed by an empty line
-      was added to the Synopsis section of this chapter.</para>
+      <quote>Index</quote> line in the patch contains the full path
+       to the edited file so the patch reviewer has this 
+       information. In this simple example, a new paragraph 
+       followed by an empty line
+       was added to the Synopsis section of this chapter.</para>
 
     <sect2 xml:id="getstartedguide-submit-patch">
       <title>Submit the Patch</title>
@@ -827,9 +829,8 @@ Index: en_US.ISO8859-1/books/handbook/security/chapter.xml
 
     <para>When starting out with code changes, it is good to let
       someone else look at the patch before submitting it.  &os; uses
-      the <link
-	xlink:href="http://phabricator.org/>Phabricator open source
-	review system</link>.
+      the <link xlink:href="http://phabricator.org/>Phabricator open 
+      source review system</link>.
       This section examines how to use the &os; Phabricator to create
       a code review.  Code reviews allow contributors to be sure that
       someone looked over their change and approved it.  This builds
@@ -838,22 +839,21 @@ Index: en_US.ISO8859-1/books/handbook/security/chapter.xml
     <sect2 xml:id="getstartedguide-client-setup">
       <title>Client Setup</title>
 
-      <para>The &os; Phabricator review system supports a command line
-	client and a web browser interface.  The web interface was
-	used when creating an account in Phabricator in
-	<xref linkend="getstartedguide-review-website"/>.</para>
+      <para>The &os; Phabricator review system supports a command line client and a web browser interface.  The web interface was
+	    used when creating an account in Phabricator in
+	    <xref linkend="getstartedguide-review-website"/>.</para>
 
       <para>The client component of Phabricator is called Arcanist
 	(<acronym>PHP</acronym>-based) and can be installed from
 	packages with
 	<command>pkg install php5-arcanist</command>.</para>
 
-      <para>The client needs some conifuration settings to know how to
-	find and access the &os; Review server.  This involves copying
-	a cookie that is provided during the setup process.  Enter
-	<command>arc install-certificate
-	  https://reviews.freebsd.org</command> and follow the
-	on-screen instructions.</para>
+      <para>The client needs some configuration settings to know how 
+      to find and access the &os; Review server.  This involves
+      copying a cookie that is provided during the setup process. 
+      Enter <command>arc install-certificate
+	    https://reviews.freebsd.org</command> and follow the
+	    on-screen instructions.</para>
 
       <para>Once the cookie setup is complete, the only thing left is
 	to configure Arcanist to use the <acronym>URL</acronym> for
@@ -898,7 +898,7 @@ Subscribers:
 
       <variablelist>
 	<varlistentry>
-	  <term>Revision Title (mandatory)</term
+	  <term>Revision Title(mandatory)</term
 
 	  <listitem>
 	    <para>This should be a short title for the review,
@@ -943,10 +943,10 @@ Subscribers:
 	</varlistentry>
       </variablelist>
 
-      <para>When the template is filled out, save any changes and exit
-	the editor.  The Phabricator system creates a new review on
-	the &os; server and the client prints a link for you
-	referencing it in this form:</para>
+      <para>When the template is filled out, save any changes and 
+        exit the editor.  The Phabricator system creates a new 
+        review on the &os; server and the client prints a link for
+        you referencing it in this form:</para>
 
       <example>
 	<para>https://reviews.freebsd.org/DXXX</para>
@@ -979,9 +979,9 @@ Subscribers:
 
 	<step>
 	  <para>In the upper right corner, there is a button called
-	    <literal>Create Diff</literal>.  Clisk that button to get
+	    <literal>Create Diff</literal>.  Click that button to get
 	    to the screen to crete new diffs.</para>
-	</step
+	</step>
 
 	<step>
 	  <para>On the <literal>Create New Diff</literal> page, you
@@ -1035,20 +1035,20 @@ Subscribers:
     <title>Using the Translation System</title>
 
     <sect2 xml:id="getstartedguide-initial-workspace-setup">
-      <title>Initial Workspace Setup</title>
+       <title>Initial Workspace Setup</title>
 
-      <para>FreeBSD has begun to use a PO/gettext translation system
-	that allows translators to automatically extract
-	strings from a document that needs to be translated.  The
-	strings are then loaded into a PO editor, which supports
-	editing these strings and offers suggestions of previously
-	translated strings for re-use.</para>
+      <para>&os; has begun to use a PO/gettext translation system
+      that allows translators to automatically extract
+	    strings from a document that needs to be translated.  The
+	    strings are then loaded into a PO editor, which supports
+	    editing these strings and offers suggestions of previously
+	    translated strings for re-use.</para>
 
       <para>For a new translation, the doc build system needs to
-	have a working Makefile.  The following example copies the
-	English Makefile for the Leap Seconds article; replace
-	<literal>fr_FR.ISO8859-1</literal> with the directory name of
-	the language you wish to translate to:</para>
+	    have a working Makefile.  The following example copies the
+	    English Makefile for the Leap Seconds article; replace
+	    <literal>fr_FR.ISO8859-1</literal> with the directory name of
+	    the language you wish to translate to:</para>
 
       <screen>&prompt.user; <userinput>cp ~/doc/en_US.ISO8859-1/articles/leap-seconds/Makefile \
       ~/doc/fr_FR.ISO8859-1/articles/leap-seconds/</userinput></screen>
@@ -1059,73 +1059,203 @@ Subscribers:
       <title>Extracting strings</title>
 
       <para>Then, extract all the strings to be translated from the
-	document:</para>
+	      document:</para>
 
       <screen>&prompt.user; <userinput>cd ~/doc/fr_FR.ISO8859-1/
-      articles/leap-seconds/</userinput><userinput>make po</userinput></screen>
+      articles/leap-seconds/ make po </userinput></screen>
 
       <para>This creates a new file in that directory called
-	<filename>fr_FR.po</filename> that contains all the strings
-	from the document to translate.</para>
-
+      <filename>fr_FR.po</filename> that contains all the strings
+      from the document to translate. </para>
     </sect2>
 
     <sect2 xml:id="getstartedguide-using-po-editor">
       <title>Using a PO Editor</title>
+      
+      <para>To start translating, open the 
+        <filename>fr_FR.po</filename> in the <application>poedit
+        </application> editor:</para>
 
-      <para>To start translating, open the
-	<filename>fr_FR.po</filename> in the
-	<application>poedit</application> editor:</para>
+      <screen><userinput>poedit fr_FR.po</userinput></screen>
 
-% poedit fr_FR.po
+      <para>As seen in <emphasis>Figure 9<emphasis>, the left side 
+        of the editor displays all the strings from the English 
+        document. The right side lists any strings for 
+        which a translation already exists.</para>
 
-As seen in Figure 9, the left side of the editor displays all the strings from the English document. The right side lists any strings for which a translation already exists.
+      <figure xml:id="translating-file-poedit">
+  <title>Figure 9: Translating a File Using poedit</title>
 
-Figure 9: Translating a File Using poedit
-[Image]
-The Source text window displays the currently selected string in English. Use the Translation field below to enter the translation that matches that string.
+    <mediaobject>
+      <imageobject>
+        <imagedata
+          fileref="[CHAPTERNAME]/translating-file-poedit"/>
+      </imageobject>
+    </mediaobject>
+      </figure>
 
-The following tips and rules should help you with the translation process:
+      <para>The <literal>Source text</literal window displays the 
+        currently selected string in English.  Use the <literal>
+        Translation</literal> field below to enter 
+        the translation that matches that string.</para>
 
-Preserve XML tags: do not translate strings that are XML tags like <para> or </para>. They are needed by the doc build system to mark up the output in a certain way.
+      <para>The following tips and rules should help you with the 
+        translation process:</para>
 
-Preserve spaces: do not change the spacing at the beginning and end of the strings in your translation.  If there were spaces before or after the English string, they should also be entered in the translated version. This is especially true for everything within <programlisting> and <screen> tags. All spaces must remain as they were in the original version.
+      <variablelist>
+        <varlistentry>
+          <term>Preserve XML tags:</term>
 
-Preserve verbatim tags: these tags do not need to be translated:
-<citerefentry>
-<command>
-<filename>
-<literal>
-<manvolnum>
-<orgname>
-<package>
-<programlisting>
-<prompt>
-<refentrytitle>
-<screen>
-<userinput>
-<varname>
+          <listitem>
+            <para>Do not translate strings that are XML tags 
+              like <para> or </para>.    
+              They are needed by the doc build system to markup the 
+              output in a certain way.</para>
+          </listitem>
+        </varlistentry> 
+        
+        <varlistentry>
+          <term>Preserve spaces:</term> 
 
-Version Control strings: things like $FreeBSD$ do not need to be translated, as they are replaced with a version number and other information upon checking the file into FreeBSD's version control system.
+          <listitem>
+            <para>Do not change the spacing at the beginning and 
+              end of the strings in your translation.  
+              If there were spaces before or after the English
+              string, they should also be entered in the translated
+              version. This is especially true for everything 
+              within <programlisting> and <screen> tags. 
+              All spaces must remain as they were in the original
+              version.
+          </listitem>
+        </varlistentry>
+      </variablelist>
+       
+      <para><emphasis>Preserve verbatim tags:</emphasis>these tags 
+      do not need to be translated:</para>
 
-Names of products, places, author names, and filenames like Makefile do not need to be translated. When in doubt, do not translate and discuss these within your translation group or ask a documentation committer.
+      <itemizedlist>
+        <listitem>
+          <para><citerefentry></para>
+        </listitem>
 
-Create a word list: over time, you will find that you are translating the same string over and over again. In this case, it is good to create a word list that other translators can use. This is especially helpful for difficult words and will create better consistency over time as the same word can be reused in the same context, but in other sections or documents. 
+        <listitem>
+          <para><command></para>
+        </listitem>
+
+        <listitem>
+          <para><filename></para>
+        </listitem>
+
+        <listitem>
+          <para><literal></para>
+        </listitem>
+
+        <listitem>
+          <para><manvolnum></para>
+        </listitem>
+
+        <listitem>
+          <para><orgname></para>
+        </listitem>
+
+        <listitem>
+          <para><package></para>
+        </listitem>
+
+        <listitem>
+          <para><programlisting></para>
+        </listitem>
+
+        <listitem>
+          <para><prompt></para>
+        </listitem>
+
+        <listitem>
+          <para><refentrytitle></para>
+        </listitem>
+
+        <listitem>
+          <para><screen></para>
+        </listitem>
+
+        <listitem>
+          <para><userinput></para>
+        </listitem>
+
+        <listitem>
+          <para><varname></para>
+        </listitem>
+      </itemizedlist>
+
+      <variablelist>
+        <varlistentry>
+          <term>Version Control strings:</term> 
+
+          <listitem>
+            <para>Things like <emphasis>$FreeBSD$</emphasis> 
+              do not need to be translated, as they are 
+              replaced with a version number and other information 
+              upon checking the file into &os;'s version 
+              control system.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Names of products, places, author names, and 
+          filenames:</term> 
+
+          <listitem>
+            <para> Makefile, for example, does not need to be 
+              translated.  When in doubt, do not translate and
+              discuss these within your translation group or ask a
+              documentation committer.</para>
+          </listitem>
+        </varlistentry>
+
+        <varlistentry>
+          <term>Create a word list:</term>
+
+          <listitem>
+            <para> Over time, translating the same string over and 
+              over again becomes a common occurance.  In this case,
+              it is good to create a word list other translators
+              can use.  This is especially helpful for difficult
+              words and will create better consistency over time as 
+              the same word can be reused in the same context, but
+              in other sections or documents.</para> 
+          </listitem>
+        </varlistentry>
+      </variablelist>
+
     </sect2>
 
-  <sect2 xml:id="getstartedguide-generate-translated-document">
-    <title>Generating the Translated Document</title>
-After translating a couple of strings or even the whole document, follow these instructions to see what the translated document looks like. First, save your edited document and close poedit. Then generate the translated document:
+    <sect2 xml:id="getstartedguide-generate-translated-document">
+      <title>Generating the Translated Document</title>
 
-% cd ~/doc/fr_FR.ISO8859-1/articles/leap-seconds/
-% make tran
+      <para>After translating a couple of strings or even the whole
+        document, follow these instructions to see what the 
+        translated document lookslike.  First, save your edited
+        document and close <application>poedit</application>. 
+        Then generate the translated document:
 
-You can then create an HTML document in order to view it in a web browser. This example generates the HTML then opens it in the Firefox web browser on a graphical desktop:
+      <screen>&prompt.user; <userinput>cd ~/doc/fr_FR.ISO8859-1/
+        articles/leap-seconds/</userinput>
+      &prompt.user; <userinput>make tran/<userinput> </screen>
+      
+      <para>You can then create an HTML document in order to view 
+        it in a web browser.  This example generates the HTML then
+        opens it in the Firefox web browser on a graphical 
+        desktop:</para>
 
-% make && firefox article.html
+      <screen>&prompt.user; <userinput>make && firefox article.html
+      </userinput></screen>
 
-Repeat these steps, beginning with make po, to continue to work on the translation.
+      <para>Repeat these steps, beginning with 
+         <command>make po</command>, to continue to work on 
+         the translation.</para>
     </sect2>
+
+
   <sect1 xml:id="getstartedguide-create-patch-submission">
     <title>Creating a Patch for Submission</title>
     
@@ -1136,7 +1266,7 @@ Repeat these steps, beginning with make po, to continue to work on the translati
       <emphasis>first line</emphasis> of the PO document.
 
     <para>This will later be replaced by the version control system 
-      with a date timestamp and author information so that other
+      with a date timestamp and author information so other
       people know when this file was last changed.</para>
 
     <para>Next, add the <filename>.po file</filename>, the 
@@ -1161,7 +1291,7 @@ Repeat these steps, beginning with make po, to continue to work on the translati
       property 'svn:keywords' set on 'article.xml'
       property 'svn:keywords' set on 'fr_FR.po'</screen>
 
-    <para>Next, set the proper MIME types for the files. Usually, 
+    <para>Next, set the proper MIME types for the files.  Usually, 
       this is the UTF-8 character set, but check for your local
       language encoding.  To prevent the version control system from
       mistaking these files as binary data, the <literal>
@@ -1209,7 +1339,8 @@ Repeat these steps, beginning with make po, to continue to work on the translati
       
     <para>This section describes some of the tools that are 
       currently under consideration and testing for possible 
-      integration into the documentation or translation workflow.  During BSDCan, drop by the Doc Lounge room in the evenings 
+      integration into the documentation or translation workflow. 
+      During BSDCan, drop by the Doc Lounge room in the evenings 
       for further discussion and demonstrations of these tools.    
       After BSDCan, discussion and status reports on these and 
       other tools will be available on the &a.doc or the 
@@ -1239,11 +1370,12 @@ Repeat these steps, beginning with make po, to continue to work on the translati
           documents.</para>
       </listitem>
 
-    <listitem>
-    <para>&os; uses the Subversion version control system.  
-      However, we have started to work on a Github to Subversion 
-      bridge.  When complete, users will be able to submit git pull 
-      requests for documentation and translation updates.</para>
+      <listitem>
+        <para>&os; uses the Subversion version control system.  
+          However, we have started to work on a Github to Subversion 
+          bridge.  When complete, users will be able to submit git
+          pull requests for documentation and translation updates.
+        </para>
     </listitem>
 
     <listitem>
