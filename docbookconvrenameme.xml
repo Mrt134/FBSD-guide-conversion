@@ -97,7 +97,8 @@
 
     <para>&os; is a registered trademark of the The &os; Foundation.
       &os; documentation is provided under the
-      <link xlink:href="&url.base;/copyright/freebsd-doc-license.html">&os;
+      <link
+	xlink:href="&url.base;/copyright/freebsd-doc-license.html">&os;
 	Documentation License</link>.</para>
   </sect1>
 
@@ -112,17 +113,16 @@
       Unix-like system and users who want to learn more about the &os;
       operating system.</para>
 
-    <para>The &os; documentation set includes a number of documents 
-      of different types.  
-      Some of the most important ones are described
+    <para>The &os; documentation set includes a number of documents of
+      different types.  Some of the most important ones are described
       here:</para>
 
     <itemizedlist>
       <listitem>
 	<para><emphasis>The &os; Handbook:</emphasis> A resource for
 	  users to learn about the features this operating system
-	  provides.  Its main focus is towards users administrators of
-	  &os; systems.</para>
+	  provides.  Its main focus is toward users and administrators
+	  of &os; systems.</para>
       </listitem>
 
       <listitem>
@@ -135,12 +135,10 @@
       <listitem>
 	<para><emphasis>Manual pages:</emphasis> There are the manual
 	  pages provided with the operating system using the
-	  <citerefentry><refentrytitle>man</refentrytitle>
-	    <manvolnum>1</manvolnum>
-	  </citerefentry> format.  In &os;, manual pages are managed
+	  &man.man.1; format.  In &os;, manual pages are managed
 	  outside the <emphasis>doc</emphasis> repository, as they
-	  reside within the <emphasis>src</emphasis> repository.
-
+	  reside within the <emphasis>src</emphasis>
+	  repository.</para>
       </listitem>
 
       <listitem>
@@ -152,31 +150,29 @@
       </listitem>
 
       <listitem>
-	<para><emphasis>Books:</emphasis></para> This category
-	  includes the Porter's Handbook, with instructions on how to
-	  work with the ports system as a developer or
-	  <emphasis>ports</emphasis> committer.  It also has the &os;
-	  Developer's Handbook, intended for people who want to know
-	  more about how &os; is developed and how some of its
-	  subsystems work.</para>
+	<para><emphasis>Books:</emphasis> This category includes the
+	  Porter's Handbook, with instructions on how to work with the
+	  ports system as a developer or <emphasis>ports</emphasis>
+	  committer.  It also has the &os; Developer's Handbook,
+	  intended for those who want to know more about how &os; is
+	  developed and how some of its subsystems work.</para>
       </listitem>
 
       <listitem>
 	<para><emphasis>The &os; Website:</emphasis> The &os; Website
 	  is maintained by the Documentation Project and can be built
 	  like any other document using a
-	  <filename>Makefile</filename>.<para>
+	  <filename>Makefile</filename>.</para>
       </listitem
     </itemizedlist>
 
-    <para>The <acronym>FDP</acronym> also maintains the
-      <link
-	xlink:href="&url.base;/doc/en_us.ISO8859-1/books/fdp-primer/">FDP Primer</link>,
-      which contains instructions for people who want to get involved
-      in the &os; documentation project.  Starting from the tools
-      being used, to formatting and indentation rules, it covers
-      everything a person involved in &os; documentation needs to
-      know.  It is used as a reference even by documentation
+    <para>The <acronym>FDP</acronym> also maintains the <link
+	xlink:href="&url.base;/doc/en_us.ISO8859-1/books/fdp-primer/">FDP
+	Primer</link>, which contains instructions for people who want
+      to get involved in the &os; documentation project.  Starting
+      from the tools being used, to formatting and indentation rules,
+      it covers everything a person involved in &os; documentation
+      needs to know.  It is used as a reference even by documentation
       committers who have been around for a long time.</para>
 
     <para>Translation projects for various countries and languages
