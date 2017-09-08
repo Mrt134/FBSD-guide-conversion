@@ -205,28 +205,31 @@
     </note>
 
     <para>To begin the package installations, become the superuser and
-      type
-	<screen>&prompt.root; <userinput>pkg install textproc/docproj</userinput></screen>
-      Whenever prompted, type <keycap>y</keycap> to proceed.
+      type</para>
+
+    <screen>
+&prompt.root; <userinput>pkg install textproc/docproj</userinput></screen>
+
+    <para>Whenever prompted, type <keycap>y</keycap> to proceed.
       Based on which dependencies are already installed on your
       system, this package installation may take a few minutes, so
       wait until it is finished.</para>
 
     <para>Next, install the following packages.  Again, type
-      <keycap>y</keycap> when prompted.  If you receive a message
+      <keycap>y</keycap> when prompted.  If a message appears
       indicating a package is already installed, skip that package and
       proceed to the next package installation.</para>
 
-    <screen>&prompt.root; <userinput>pkg install textproc/html2text</userinput>
+    <screen>
+&prompt.root; <userinput>pkg install textproc/html2text</userinput>
 &prompt.root; <userinput>pkg install japanese/font-ipa</userinput>
 &prompt.root; <userinput>pkg install textproc/itstool</userinput>
 &prompt.root; <userinput>pkg install editors/poedit</userinput></screen>
 
     <para>Once all the package installations are complete, leave the
        superuser account and type <command>rehash</command> to load
-       the new binaries into your path.  You are now ready to 
-       move on to the next section to install the 
-       documentation source code.</para>
+       the new binaries.  Now the documentation source code can be
+       installed.</para>
 
   </sect1>
 
@@ -236,40 +239,40 @@
     <para>Most of the &os; documentation, in all of the translated
       languages, lives in the doc repository.  This includes the &os;
       articles, the various handbooks, the <acronym>FAQ</acronym>, and
-      the website, but not the manual pages as those are included in
-      the base repository as part of the command being
-      documented.</para>
+      the website, but not manual pages.  Those are included in the
+      base repository as part of the command being documented.</para>
 
-    <para>In order to edit existing documentation, add new
-      documentation, or translate documentation, you need to maintain
-      a copy of that doc repository on your system and ensure it is
-      kept synchronized with the official &os; repository.</para>
+    <para>To edit existing documentation, add new documentation, or
+      translate documentation, maintain a copy of that doc repository
+      on the system and ensure it is kept synchronized with the
+      official &os; repository.</para>
 
-    <para>Before downloading the doc repository, decide where on your
-      computer to store the local copy of the repository.  Since you
-      will be using your regular user account when making doc changes,
-      the location is typically somewhere in your home directory.  The
-      first time you download the repository, it will be saved to your
-      current working directory unless you specify where to save it.
-      In this document, a subdirectory named
-      <filename>freebsddoc</filename> is created a used as the
-      location for downloading the repository.</para>
+    <para>Before downloading the doc repository, choose a place on the
+      system to store the local copy of the repository.  As a regular
+      user account is used when making doc changes, it is recommended
+      to choose somewhere in the primary user's home directory.  The
+      first time downloading the repository, it is saved to the
+      current working directory unless otherwise specified.  In this
+      document, a subdirectory named <filename>freebsddoc</filename>
+      is created and used as the location for downloading the
+      repository.</para>
 
-    <para>Ensure you are logged in as your regular user account and in
-      your home directory before running these commands:</para>
+    <para>Ensure the regular user account is logged in and viewing
+      the home directory before running these commands:</para>
 
-    <screen>&prompt.user; <userinput>svnlite co https://svn.freebsd.org/doc/head ~/freebsddoc</userinput></screen>
+    <screen>
+&prompt.user; <userinput>svnlite co https://svn.freebsd.org/doc/head ~/freebsddoc</userinput></screen>
 
-    <para>It will take a few minutes to complete the download.  Note
-      you only need to use the <command>svnlite co</command> (short
-      for <command>checkout</command>) command once, for the initial
-      download.  However, you should <emphasis>always</emphasis>
-      verify you are synchronized with the repository
-      <emphasis>before</emphasis> you start to make any doc changes.
+    <para>It takes a few minutes to complete the download.  Note
+      the <command>svnlite co</command> (short for
+      <command>checkout</command>) command is used only once for the
+      initial download.  However, <emphasis>always</emphasis> verify
+      the directory is synchronized with the repository
+      <emphasis>before</emphasis> beginning to make any doc changes.
       To check for any changes and to synchronize with the repository,
-      run the <command>up</command> from within the directory to which
-      you downloaded the repository.  In this document, it appears
-      like this:</para>
+      run <command>svnlite up</command> from within the directory
+      which has the downloaded the repository.  In this document, it
+      appears like this:</para>
 
     <screen>&prompt.user; <userinput>cd ~/freebsddoc</userinput>
 &prompt.user; <userinput>svnlite up</userinput>
@@ -277,22 +280,20 @@ Updating '.':
 At revision 48138</screen>
 
     <para>In this example, no changes have been downloaded since none
-      have occurred since you last downloaded the repository.  If
-      there had been changes, you would see something like
-      this:</para>
+      have occurred since the last repository download.  If there had
+      been changes, the output will look something like this:</para>
 
     <screen>Updating '.':
 U    zh_TW.UTF-8/books/porters-handbook/Makefile
 U    zh_TW.UTF-8/books/parters-handbook/book.xml
 At revision 48138.</screen>
 
-    <para>In this example, there have been two updates (U) to the
-      Chinese translation of the Porter's Handbook.  It is important
-      to note the names of the files that have changed if you are
-      making edits to those same files and have not yet submitted your
-      changes for review.  You should also make note of the revision
-      number as this may be needed during the translation
-      process.</para>
+    <para>In this example, there are two updates (U) to the Chinese
+      translation of the Porter's Handbook.  It is important
+      to note the names of the changed files as you may be making
+      edits to those same files and have not yet submitted your
+      changes for review.  Also make note of the revision number as
+      this may be needed during the translation process.</para>
 
   </sect1>
 
